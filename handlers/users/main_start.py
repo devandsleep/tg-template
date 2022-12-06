@@ -4,6 +4,7 @@ from aiogram import types
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.builtin import CommandStart
 
+from config import main_photo
 from filters.all_filters import IsUser
 from keyboards import main_inline
 from loader import dp, bot

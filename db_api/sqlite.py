@@ -5,6 +5,7 @@ import random
 import sqlite3
 import time
 
+
 path_to_db = "botBD.sqlite"
 
 
@@ -51,12 +52,12 @@ def get_format_args(sql, parameters: dict):
 
 #######################################################################################################################
 ########################################### Requests to db ############################################################
-def add_user(user_id, username, reg_date):
+def add_user(user_id, username):
     with sqlite3.connect(path_to_db) as db:
         db.execute("INSERT INTO storage_users "
                    "(user_id, username, reg_date) "
                    "VALUES (?, ?, ?)",
-                   [user_id, username, reg_date])
+                   [user_id, username, get_dates()])
         db.commit()
 
 

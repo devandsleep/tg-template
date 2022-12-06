@@ -33,10 +33,6 @@ def clear_firstname(firstname):
     return firstname
 
 
-def get_dates():
-    return datetime.date.today()
-
-
 # commands registration
 async def set_default_commands(dp):
     await dp.bot.set_my_commands([
