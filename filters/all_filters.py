@@ -2,7 +2,7 @@ from aiogram import types
 from aiogram.dispatcher.filters import BoundFilter
 
 from config import admins
-from db_api import get_userx
+from db_api import get_user
 
 
 class IsPrivate(BoundFilter):

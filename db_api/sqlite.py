@@ -5,7 +5,7 @@ import random
 import sqlite3
 import time
 
-path_to_db = "data/botBD.sqlite"
+path_to_db = "botBD.sqlite"
 
 
 def logger(statement):
@@ -185,13 +185,12 @@ def create_bd():
         check_sql = db.execute("PRAGMA table_info(storage_users)")
         check_sql = check_sql.fetchall()
         check_create_users = [c for c in check_sql]
-        if len(check_create_users) == 7:
+        if len(check_create_users) == 4:
             print("DB was found(1)")
         else:
             db.execute("CREATE TABLE storage_users("
                        "increment INTEGER PRIMARY KEY AUTOINCREMENT, "
-                       "user_id INTEGER, user_login TEXT, user_name TEXT, "
-                       "balance INTEGER, all_refill INTEGER, reg_date TIMESTAMP)")
+                       "user_id INTEGER, username TEXT, reg_date TIMESTAMP)")
             print("DB was not found(1) | Creating...")
 
         # Создание БД с хранением данных платежных систем
